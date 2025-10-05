@@ -1,124 +1,134 @@
 {
-  "classes": {
+  "races": {
     "00-01": {
       "_id": "00-01",
-      "version": 6,
+      "version": 8,
       "dataSource": 2,
-      "name": "Barbarian",
-      "icon": "Fantasy/Badges/800_axe",
+      "name": "Dwarf",
+      "icon": "Fantasy/Badges/800_mug",
       "flavour": "",
-      "effect": "s+z1,d12",
-      "effectLabel": "Hit Dice: ::1d12:: per barbarian level"
+      "effect": "s+u103,2&s+u23,25&saF2&saF3",
+      "effectLabel": "RACE_DWARF_EL"
     },
     "00-02": {
       "_id": "00-02",
-      "version": 6,
+      "version": 8,
       "dataSource": 2,
-      "name": "Bard",
-      "icon": "Fantasy/Badges/800_lute",
-      "flavour": "",
-      "effect": "s+z1,d8",
-      "effectLabel": "Hit Dice: ::1d8:: per bard level"
+      "name": "Dwarf: Hill Dwarf",
+      "icon": "Fantasy/Badges/800_mug",
+      "flavour": "RACE_HILL_DWARF_F",
+      "effect": "s+u103,2&s+u23,25&saF2&saF3&saF4&s+u105,1",
+      "effectLabel": "RACE_DWARF_EL"
     },
     "00-03": {
       "_id": "00-03",
-      "version": 6,
+      "version": 8,
       "dataSource": 2,
-      "name": "Cleric",
-      "icon": "Fantasy/Badges/800_cross",
-      "flavour": "",
-      "effect": "s+z1,d8",
-      "effectLabel": "Hit Dice: ::1d8:: per cleric level"
+      "name": "Elf",
+      "icon": "Fantasy/Badges/800_tree",
+      "flavour": "RACE_ELF_F",
+      "effect": "s+u102,2&s+u23,30&saF2&saF15&saF6",
+      "effectLabel": "RACE_ELF_EL"
     },
     "00-04": {
       "_id": "00-04",
-      "version": 6,
+      "version": 8,
       "dataSource": 2,
-      "name": "Druid",
-      "icon": "Fantasy/Badges/800_paw",
-      "flavour": "",
-      "effect": "s+z1,d8",
-      "effectLabel": "Hit Dice: ::1d8:: per druid level"
+      "name": "Elf: High Elf",
+      "icon": "Fantasy/Badges/800_tree",
+      "flavour": "RACE_HIGH_ELF_F",
+      "effect": "s+u102,2&s+u23,30&saF2&saF15&saF6&s+u104,1",
+      "effectLabel": "RACE_HIGH_ELF_EL"
     },
     "00-05": {
       "_id": "00-05",
-      "version": 6,
+      "version": 8,
       "dataSource": 2,
-      "name": "Fighter",
-      "icon": "Fantasy/Badges/800_sword",
-      "flavour": "",
-      "effect": "s+z1,d10",
-      "effectLabel": "Hit Dice: ::1d10:: per fighter level"
+      "name": "Halfling",
+      "icon": "Fantasy/Badges/800_feet",
+      "flavour": "RACE_HALFLING_F",
+      "effect": "s+u102,2&s+u23,25&saF11&saF1&saF8",
+      "effectLabel": "RACE_HALFLING_EL"
     },
     "00-06": {
       "_id": "00-06",
-      "version": 6,
+      "version": 8,
       "dataSource": 2,
-      "name": "Monk",
-      "icon": "Fantasy/Badges/800_fist",
-      "flavour": "",
-      "effect": "s+z1,d8",
-      "effectLabel": "Hit Dice: ::1d8:: per monk level"
+      "name": "Halfling: Lightfoot",
+      "icon": "Fantasy/Badges/800_feet",
+      "flavour": "RACE_LIGHTFOOT_F",
+      "effect": "s+u102,2&s+u23,25&saF11&saF1&saF8&s+u106,1&saF16",
+      "effectLabel": "RACE_LIGHTFOOT_EL"
     },
     "00-07": {
       "_id": "00-07",
-      "version": 6,
+      "version": 8,
       "dataSource": 2,
-      "name": "Paladin",
-      "icon": "Fantasy/Badges/800_shield",
+      "name": "Human",
+      "icon": "Fantasy/Badges/800_sword",
       "flavour": "",
-      "effect": "s+z1,d10",
-      "effectLabel": "Hit Dice: ::1d10:: per paladin level"
+      "effect": "s+u101,1&s+u102,1&s+u103,1&s+u104,1&s+u105,1&s+u106,1&s+u23,30",
+      "effectLabel": "RACE_HUMAN_EL"
     },
     "00-08": {
       "_id": "00-08",
-      "version": 6,
+      "version": 8,
       "dataSource": 2,
-      "name": "Ranger",
-      "icon": "Fantasy/Badges/800_bow",
-      "flavour": "",
-      "effect": "s+z1,d10",
-      "effectLabel": "Hit Dice: ::1d10:: per ranger level"
+      "name": "Dragonborn",
+      "icon": "Fantasy/Badges/800_dragon",
+      "flavour": "RACE_DRAGONBORN_F",
+      "effect": "s+u101,2&s+u106,1&s+u23,30&saF17",
+      "effectLabel": "RACE_DRAGONBORN_EL"
     },
     "00-09": {
       "_id": "00-09",
-      "version": 6,
+      "version": 8,
       "dataSource": 2,
-      "name": "Rogue",
-      "icon": "Fantasy/Badges/800_lock",
-      "flavour": "",
-      "effect": "s+z1,d8",
-      "effectLabel": "Hit Dice: ::1d8:: per rogue level"
+      "name": "Gnome",
+      "icon": "Fantasy/Badges/800_hat",
+      "flavour": "RACE_GNOME_F",
+      "effect": "s+u104,2&s+u23,25&saF2&saF7",
+      "effectLabel": "RACE_GNOME_EL"
     },
     "00-0A": {
       "_id": "00-0A",
-      "version": 6,
+      "version": 8,
       "dataSource": 2,
-      "name": "Sorcerer",
+      "name": "Gnome: Rock Gnome",
       "icon": "Fantasy/Badges/800_hat",
-      "flavour": "",
-      "effect": "s+z1,d6",
-      "effectLabel": "Hit Dice: ::1d6:: per sorcerer level"
+      "flavour": "RACE_ROCK_GNOME_F",
+      "effect": "s+u104,2&s+u23,25&saF2&saF7&s+u103,1",
+      "effectLabel": "RACE_ROCK_GNOME_EL"
     },
     "00-0B": {
       "_id": "00-0B",
-      "version": 6,
+      "version": 8,
       "dataSource": 2,
-      "name": "Warlock",
-      "icon": "Fantasy/Badges/800_eye",
-      "flavour": "",
-      "effect": "s+z1,d8",
-      "effectLabel": "Hit Dice: ::1d8:: per warlock level"
+      "name": "Half-Elf",
+      "icon": "Fantasy/Badges/800_tree",
+      "flavour": "RACE_HALF_ELF_F",
+      "effect": "s+u106,2&s+u23,30&saF2&saF6",
+      "effectLabel": "RACE_HALF_ELF_EL"
     },
     "00-0C": {
       "_id": "00-0C",
-      "version": 6,
+      "version": 8,
       "dataSource": 2,
-      "name": "Wizard",
-      "icon": "Fantasy/Badges/800_book",
+      "name": "Half-Orc",
+      "icon": "Fantasy/Badges/800_axe",
+      "flavour": "RACE_HALF_ORC_F",
+      "effect": "s+u101,2&s+u103,1&s+u23,30&saF2&saF12&saF14&saF13",
+      "effectLabel": "RACE_HALF_ORC_EL"
+    },
+    "00-0D": {
+      "_id": "00-0D",
+      "version": 8,
+      "dataSource": 2,
+      "name": "Tiefling",
+      "icon": "Fantasy/Badges/800_horns",
       "flavour": "",
-      "effect": "s+z1,d6",
-      "effectLabel": "Hit Dice: ::1d6:: per wizard level"
+      "effect": "s+u104,1&s+u106,2&s+u23,30&saF2&saF9&saF10",
+      "effectLabel": "RACE_TIEFLING_EL"
     }
   }
 }
