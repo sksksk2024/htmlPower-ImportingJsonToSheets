@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>September 2025 — Mini Site</title>
+    <meta
+      name="description"
+      content="Single-file HTML site for September 2025: calendar, highlights, and quick notes."
+    />
+
+    <!-- Single-file site: no external CSS/JS required.
+       Uses embedded styles for layout inside the HTML file. -->
+    <style>
+      :root {
+        --bg: #0f1720;
+        --card: #0b1220;
+        --accent: #7dd3fc;
+        --muted: #94a3b8;
+        --glass: rgba(255, 255, 255, 0.03);
+        --radius: 12px;
+        font-family: Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI",
+          Roboto, "Helvetica Neue", Arial;
+      }
+      html,
+      body {
+        height: 100%;
+        margin: 0;
+        background: linear-gradient(180deg, #071026 0%, #0f1720 100%);
+        color: #e6eef6;
+      }
+      .wrap {
+        max-width: 980px;
+        margin: 30px auto;
+        padding: 28px;
+        background: linear-gradient(
+          180deg,
+          rgba(255, 255, 255, 0.02),
+          transparent
+        );
+        border-radius: 18px;
+        box-shadow: 0 6px 30px rgba(2, 6, 23, 0.6);
+      }
+      header {
+        display: flex;
+        gap: 18px;
+        align-items: center;
+        justify-content: space-between;
+        margin-bottom: 20px;
+      }
+      .brand {
+        display: flex;
+        gap: 12px;
+        align-items: center;
+      }
+      .logo {
+        width: 56px;
+        height: 56px;
+        border-radius: 10px;
+        background: linear-gradient(135deg, #0369a1, #06b6d4);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: 700;
+        color: #021;
+        font-size: 18px;
+      }
+      h1 {
+        margin: 0;
+        font-size: 20px;
+      }
+      p.lead {
+        margin: 0;
+        color: var(--muted);
+        font-size: 13px;
+      }
+      main {
+        display: grid;
+        grid-template-columns: 1fr 340px;
+        gap: 20px;
+      }
+      @media (max-width: 900px) {
+        main {
+          grid-template-columns: 1fr;
+        }
+        .aside {
+          order: 2;
+        }
+      }
+
+      /* Calendar card */
+      .card {
+        background: var(--card);
+        border-radius: var(--radius);
+        padding: 16px;
+        box-shadow: 0 4px 20px rgba(2, 6, 23, 0.6);
+      }
+      .month-head {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-bottom: 8px;
+      }
+      .month-name {
+        font-size: 18px;
+        font-weight: 600;
+        display: flex;
+        gap: 10px;
+        align-items: center;
+      }
+      .month-name .year {
+        color: var(--muted);
+        font-weight: 500;
+        font-size: 13px;
+      }
+      table.calendar {
+        width: 100%;
+        border-collapse: collapse;
+        table-layout: fixed;
+        background: transparent;
+      }
+      table.calendar thead th {
+        font-weight: 600;
+        text-align: center;
+        font-size: 12px;
+        color: var(--muted);
+        padding: 6px 4px;
+      }
+      table.calendar td {
+        height: 84px;
+        vertical-align: top;
+        padding: 6px;
+        border-radius: 8px;
+      }
+      .day {
+        display: block;
+        font-weight: 700;
+        margin-bottom: 6px;
+      }
+      .cell {
+        background: linear-gradient(
+          180deg,
+          rgba(255, 255, 255, 0.015),
+          transparent
+        );
+        padding: 8px;
+        border-radius: 8px;
+      }
+      .today {
+        outline: 2px solid rgba(125, 211, 252, 0.16);
+        box-shadow: 0 6px 18px rgba(125, 211, 252, 0.06);
+      }
+      .muted {
+        color: var(--muted);
+        font-weight: 600;
+      }
+      .event {
+        display: inline-block;
+        margin-top: 6px;
+        font-size: 12px;
+        background: rgba(125, 211, 252, 0.07);
+        padding: 6px 8px;
+        border-radius: 999px;
+        font-weight: 600;
+      }
+      .small {
+        font-size: 13px;
+        color: var(--muted);
+      }
+      /* Aside */
+      .aside .section {
+        margin-bottom: 14px;
+      }
+      .pill {
+        display: inline-block;
+        padding: 6px 10px;
+        border-radius: 999px;
+        background: var(--glass);
+        font-weight: 600;
+        font-size: 13px;
+      }
+      footer {
+        margin-top: 18px;
+        text-align: center;
+        color: var(--muted);
+        font-size: 13px;
+      }
+      /* Tiny footer credits */
+      .credits {
+        font-size: 12px;
+        color: var(--muted);
+      }
+      a {
+        color: var(--accent);
+        text-decoration: none;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="wrap" role="application" aria-labelledby="site-title">
+      <header>
+        <div class="brand" aria-hidden="false">
+          <div class="logo" aria-hidden="true">S25</div>
+          <div>
+            <h1 id="site-title">September 2025 — Quick Site</h1>
+            <p class="lead">
+              Monthly snapshot · single-file HTML · calendar & highlights
+            </p>
+          </div>
+        </div>
+        <div class="meta">
+          <div class="pill" aria-hidden="true">Sep · 2025</div>
+        </div>
+      </header>
+
+      <main>
+        <!-- Main column: Calendar and notes -->
+        <section>
+          <article class="card" aria-label="September 2025 calendar">
+            <div class="month-head">
+              <div class="month-name">
+                September <span class="year">2025</span>
+              </div>
+              <div class="small">30 days · starts Monday</div>
+            </div>
+
+            <!-- Calendar: correct layout for September 2025 (1st is Monday) -->
+            <table class="calendar" role="grid" aria-labelledby="site-title">
+              <thead>
+                <tr>
+                  <th scope="col">Mon</th>
+                  <th scope="col">Tue</th>
+                  <th scope="col">Wed</th>
+                  <th scope="col">Thu</th>
+                  <th scope="col">Fri</th>
+                  <th scope="col">Sat</th>
+                  <th scope="col">Sun</th>
+                </tr>
+              </thead>
+              <tbody>
+                <!-- Week 1: 1 - 7 -->
+                <tr>
+                  <td>
+                    <div class="cell">
+                      <span class="day">1</span>
+                      <div class="small muted">—</div>
+                    </div>
+                  </td>
+                  <td>
+                    <div class="cell"><span class="day">2</span></div>
+                  </td>
+                  <td>
+                    <div class="cell"><span class="day">3</span></div>
+                  </td>
+                  <td>
+                    <div class="cell"><span class="day">4</span></div>
+                  </td>
+                  <td>
+                    <div class="cell"><span class="day">5</span></div>
+                  </td>
+                  <td>
+                    <div class="cell">
+                      <span class="day">6</span>
+                      <div class="event">Weekend</div>
+                    </div>
+                  </td>
+                  <td>
+                    <div class="cell">
+                      <span class="day">7</span>
+                      <div class="event">Weekend</div>
+                    </div>
+                  </td>
+                </tr>
+
+                <!-- Week 2: 8 - 14 -->
+                <tr>
+                  <td>
+                    <div class="cell"><span class="day">8</span></div>
+                  </td>
+                  <td>
+                    <div class="cell"><span class="day">9</span></div>
+                  </td>
+                  <td>
+                    <div class="cell"><span class="day">10</span></div>
+                  </td>
+                  <td>
+                    <div class="cell"><span class="day">11</span></div>
+                  </td>
+                  <td>
+                    <div class="cell"><span class="day">12</span></div>
+                  </td>
+                  <td>
+                    <div class="cell"><span class="day">13</span></div>
+                  </td>
+                  <td>
+                    <div class="cell"><span class="day">14</span></div>
+                  </td>
+                </tr>
+
+                <!-- Week 3: 15 - 21 -->
+                <tr>
+                  <td>
+                    <div class="cell"><span class="day">15</span></div>
+                  </td>
+                  <td>
+                    <div class="cell"><span class="day">16</span></div>
+                  </td>
+                  <td>
+                    <div class="cell"><span class="day">17</span></div>
+                  </td>
+                  <td>
+                    <div class="cell"><span class="day">18</span></div>
+                  </td>
+                  <td>
+                    <div class="cell"><span class="day">19</span></div>
+                  </td>
+                  <td>
+                    <div class="cell"><span class="day">20</span></div>
+                  </td>
+                  <td>
+                    <div class="cell"><span class="day">21</span></div>
+                  </td>
+                </tr>
+
+                <!-- Week 4: 22 - 28 -->
+                <tr>
+                  <td>
+                    <div class="cell"><span class="day">22</span></div>
+                  </td>
+                  <td>
+                    <div class="cell"><span class="day">23</span></div>
+                  </td>
+                  <td>
+                    <div class="cell"><span class="day">24</span></div>
+                  </td>
+                  <td>
+                    <div class="cell"><span class="day">25</span></div>
+                  </td>
+                  <td>
+                    <div class="cell"><span class="day">26</span></div>
+                  </td>
+                  <td>
+                    <div class="cell"><span class="day">27</span></div>
+                  </td>
+                  <td>
+                    <div class="cell"><span class="day">28</span></div>
+                  </td>
+                </tr>
+
+                <!-- Week 5: 29 - 30 (+ empty cells) -->
+                <tr>
+                  <td>
+                    <div class="cell"><span class="day">29</span></div>
+                  </td>
+                  <td>
+                    <div class="cell today" aria-current="date">
+                      <span class="day">30</span>
+                      <div class="small">Last day of month</div>
+                    </div>
+                  </td>
+                  <td><div class="cell muted"></div></td>
+                  <td><div class="cell muted"></div></td>
+                  <td><div class="cell muted"></div></td>
+                  <td><div class="cell muted"></div></td>
+                  <td><div class="cell muted"></div></td>
+                </tr>
+              </tbody>
+            </table>
+
+            <div
+              style="
+                margin-top: 12px;
+                display: flex;
+                gap: 10px;
+                flex-wrap: wrap;
+              "
+            >
+              <div class="small">
+                Tip: This file is self-contained — copy, edit, or drop events
+                inline.
+              </div>
+              <div style="margin-left: auto" class="small">
+                Local timezone: your browser
+              </div>
+            </div>
+          </article>
+
+          <!-- Notes / highlight strip -->
+          <article class="card" style="margin-top: 14px">
+            <h3 style="margin: 0 0 8px 0">Highlights & quick notes</h3>
+            <ul style="margin: 0; padding-left: 18px; color: var(--muted)">
+              <li>
+                <strong>Sept 1:</strong> Month starts—use this week to set
+                goals.
+              </li>
+              <li>
+                <strong>Weekends:</strong> Good for deep work or rest. Pick one.
+              </li>
+              <li>
+                <strong>End of month (30):</strong> Quick review + next-month
+                prep.
+              </li>
+            </ul>
+          </article>
+        </section>
+
+        <!-- Aside column -->
+        <aside class="aside">
+          <div class="card section" aria-label="Quick actions">
+            <h4 style="margin: 0 0 8px 0">Quick actions</h4>
+            <p class="small">No sign-ups. No tracking. Single file.</p>
+            <ol style="padding-left: 18px; color: var(--muted)">
+              <li>Edit the calendar cells to add events.</li>
+              <li>Copy this file to share with friends.</li>
+              <li>
+                Save as <code>index.html</code> and drop on a USB, server, or
+                open locally.
+              </li>
+            </ol>
+          </div>
+
+          <div class="card section" aria-label="Mini to-do">
+            <h4 style="margin: 0 0 8px 0">Mini to-do for Sept</h4>
+            <p class="small">Pick three wins and ship them.</p>
+            <ul style="padding-left: 18px; color: var(--muted); margin: 0">
+              <li>Launch one small project</li>
+              <li>Post 4 social updates</li>
+              <li>Review finances</li>
+            </ul>
+          </div>
+
+          <div class="card section credits" aria-label="Credits">
+            Built with plain HTML · calendar aligns to Monday (Sept 1, 2025).<br />
+            <span class="small">Single-file, portable, zero-tracking.</span>
+          </div>
+        </aside>
+      </main>
+
+      <footer>
+        <div class="credits">
+          Made for quick planning · copy & modify — no fuss.
+        </div>
+      </footer>
+    </div>
+  </body>
+</html>
