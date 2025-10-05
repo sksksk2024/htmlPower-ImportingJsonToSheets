@@ -1,0 +1,124 @@
+{
+  "classes": {
+    "00-01": {
+      "_id": "00-01",
+      "version": 6,
+      "dataSource": 2,
+      "name": "Barbarian",
+      "icon": "Fantasy/Badges/800_axe",
+      "flavour": "",
+      "effect": "s+z1,d12",
+      "effectLabel": "Hit Dice: ::1d12:: per barbarian level"
+    },
+    "00-02": {
+      "_id": "00-02",
+      "version": 6,
+      "dataSource": 2,
+      "name": "Bard",
+      "icon": "Fantasy/Badges/800_lute",
+      "flavour": "",
+      "effect": "s+z1,d8",
+      "effectLabel": "Hit Dice: ::1d8:: per bard level"
+    },
+    "00-03": {
+      "_id": "00-03",
+      "version": 6,
+      "dataSource": 2,
+      "name": "Cleric",
+      "icon": "Fantasy/Badges/800_cross",
+      "flavour": "",
+      "effect": "s+z1,d8",
+      "effectLabel": "Hit Dice: ::1d8:: per cleric level"
+    },
+    "00-04": {
+      "_id": "00-04",
+      "version": 6,
+      "dataSource": 2,
+      "name": "Druid",
+      "icon": "Fantasy/Badges/800_paw",
+      "flavour": "",
+      "effect": "s+z1,d8",
+      "effectLabel": "Hit Dice: ::1d8:: per druid level"
+    },
+    "00-05": {
+      "_id": "00-05",
+      "version": 6,
+      "dataSource": 2,
+      "name": "Fighter",
+      "icon": "Fantasy/Badges/800_sword",
+      "flavour": "",
+      "effect": "s+z1,d10",
+      "effectLabel": "Hit Dice: ::1d10:: per fighter level"
+    },
+    "00-06": {
+      "_id": "00-06",
+      "version": 6,
+      "dataSource": 2,
+      "name": "Monk",
+      "icon": "Fantasy/Badges/800_fist",
+      "flavour": "",
+      "effect": "s+z1,d8",
+      "effectLabel": "Hit Dice: ::1d8:: per monk level"
+    },
+    "00-07": {
+      "_id": "00-07",
+      "version": 6,
+      "dataSource": 2,
+      "name": "Paladin",
+      "icon": "Fantasy/Badges/800_shield",
+      "flavour": "",
+      "effect": "s+z1,d10",
+      "effectLabel": "Hit Dice: ::1d10:: per paladin level"
+    },
+    "00-08": {
+      "_id": "00-08",
+      "version": 6,
+      "dataSource": 2,
+      "name": "Ranger",
+      "icon": "Fantasy/Badges/800_bow",
+      "flavour": "",
+      "effect": "s+z1,d10",
+      "effectLabel": "Hit Dice: ::1d10:: per ranger level"
+    },
+    "00-09": {
+      "_id": "00-09",
+      "version": 6,
+      "dataSource": 2,
+      "name": "Rogue",
+      "icon": "Fantasy/Badges/800_lock",
+      "flavour": "",
+      "effect": "s+z1,d8",
+      "effectLabel": "Hit Dice: ::1d8:: per rogue level"
+    },
+    "00-0A": {
+      "_id": "00-0A",
+      "version": 6,
+      "dataSource": 2,
+      "name": "Sorcerer",
+      "icon": "Fantasy/Badges/800_hat",
+      "flavour": "",
+      "effect": "s+z1,d6",
+      "effectLabel": "Hit Dice: ::1d6:: per sorcerer level"
+    },
+    "00-0B": {
+      "_id": "00-0B",
+      "version": 6,
+      "dataSource": 2,
+      "name": "Warlock",
+      "icon": "Fantasy/Badges/800_eye",
+      "flavour": "",
+      "effect": "s+z1,d8",
+      "effectLabel": "Hit Dice: ::1d8:: per warlock level"
+    },
+    "00-0C": {
+      "_id": "00-0C",
+      "version": 6,
+      "dataSource": 2,
+      "name": "Wizard",
+      "icon": "Fantasy/Badges/800_book",
+      "flavour": "",
+      "effect": "s+z1,d6",
+      "effectLabel": "Hit Dice: ::1d6:: per wizard level"
+    }
+  }
+}
