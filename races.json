@@ -100,26 +100,6 @@
       "effect": "s+u104,2&s+u23,25&saF2&saF7&s+u103,1",
       "effectLabel": "RACE_ROCK_GNOME_EL"
     },
-    "00-0B": {
-      "_id": "00-0B",
-      "version": 8,
-      "dataSource": 2,
-      "name": "Half-Elf",
-      "icon": "Fantasy/Badges/800_tree",
-      "flavour": "RACE_HALF_ELF_F",
-      "effect": "s+u106,2&s+u23,30&saF2&saF6",
-      "effectLabel": "RACE_HALF_ELF_EL"
-    },
-    "00-0C": {
-      "_id": "00-0C",
-      "version": 8,
-      "dataSource": 2,
-      "name": "Half-Orc",
-      "icon": "Fantasy/Badges/800_axe",
-      "flavour": "RACE_HALF_ORC_F",
-      "effect": "s+u101,2&s+u103,1&s+u23,30&saF2&saF12&saF14&saF13",
-      "effectLabel": "RACE_HALF_ORC_EL"
-    },
     "00-0D": {
       "_id": "00-0D",
       "version": 8,
